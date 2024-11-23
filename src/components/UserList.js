@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
-
-const baseURL = "https://67281907270bd0b975545491.mockapi.io/user";
+import { Link } from "react-router-dom";
+import { getUsers, deleteUser } from "../api";
 
 function UserList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(baseURL)
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.error("Error fetching users:", error));
+    getUsers().then(setUsers).catch(console.error);
   }, []);
 
+  const handleDelete = (id) => {
+    deleteUser(id).then(() => {
+      setUsers(users.filter((user) => user.id !== id));
+    });
+  };
+
   return (
-    <div className="list-container">
+    <div>
+      <h2 className="content-title">User List</h2>
       <table className="user-table">
         <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Birthdate</th>
-            <th>Phone</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -30,8 +33,20 @@ function UserList() {
               <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.email}</td>
-              <td>{new Date(user.birthdate).toLocaleDateString()}</td>
-              <td>{user.phonenumber || "N/A"}</td>
+              <td>
+                <Link to={`/detail/${user.id}`} className="action-button detail">
+                  Detail
+                </Link>
+                <Link to={`/update/${user.id}`} className="action-button update">
+                  Update
+                </Link>
+                <button
+                  onClick={() => handleDelete(user.id)}
+                  className="action-button delete"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>

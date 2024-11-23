@@ -1,165 +1,54 @@
-/* 전체 레이아웃 */
 .app-container {
-    display: flex;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* 왼쪽 사이드바 스타일 */
-  .sidebar {
-    width: 250px;
-    background-color: #f8f9fa;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .sidebar h2 {
-    font-size: 1.5em;
-    color: #4CAF50;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* 메뉴 버튼 스타일 */
-  .menu-item {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 15px;
-    font-size: 1em;
-    background: none;
-    border: 1px solid #4CAF50;
-    color: #333;
-    border-radius: 5px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .menu-item:hover, .menu-item:focus, .menu-item:active {
-    background-color: #e0f7e9;
-    color: #333;
-  }
-  
-  /* 오른쪽 콘텐츠 영역 스타일 */
-  .content {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .content-title {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  
-  /* 입력 폼 스타일 */
-  .user-add-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .input-field {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex: 1;
-    box-sizing: border-box;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .submit-button:hover {
-    background-color: #45a049;
-  }
-  
-  /* 기존 스타일 유지 */
-
-.user-add-container {
-    display: flex;
-    flex-direction: column; /* 입력란을 세로로 배치 */
-    gap: 10px;
-    align-items: flex-start;
-    max-width: 400px; /* 입력란이 너무 길어지지 않도록 제한 */
-    margin-top: 20px;
-  }
-  
-  .input-field {
-    padding: 10px;
-    font-size: 1em;
-    width: 100%; /* 입력란 너비를 최대 너비로 설정 */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    align-self: flex-start; /* 버튼을 왼쪽 정렬 */
-  }
-  
-  .submit-button:hover {
-    background-color: #45a049;
-  }
-  /* 기존 스타일 유지 */
-
-/* 공통 스타일 */
-.user-add-container,
-.user-update-container,
-.user-delete-container {
   display: flex;
-  flex-direction: column; /* 입력란을 세로로 배치 */
-  gap: 10px;
-  align-items: flex-start;
-  max-width: 400px; /* 입력란이 너무 길어지지 않도록 제한 */
-  margin-top: 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-.input-field {
-  padding: 10px;
-  font-size: 1em;
-  width: 100%; /* 입력란 너비를 최대 너비로 설정 */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
-.submit-button {
-  padding: 10px 20px;
+.sidebar h2 {
+  font-size: 1.5em;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.menu-item {
+  display: block;
+  padding: 15px;
   font-size: 1em;
-  color: white;
-  background-color: #4CAF50;
-  border: none;
+  text-align: center;
+  background: none;
+  border: 1px solid #4CAF50;
+  color: #333;
   border-radius: 5px;
+  margin: 10px 0;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.2s;
-  align-self: flex-start; /* 버튼을 왼쪽 정렬 */
 }
 
-.submit-button:hover {
-  background-color: #45a049;
+.menu-item:hover {
+  background-color: #e0f7e9;
+  color: #333;
 }
 
-/* 테이블 스타일 */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.content-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
 .user-table {
   width: 100%;
   border-collapse: collapse;
@@ -177,4 +66,140 @@
   font-weight: bold;
 }
 
-  
+.user-add-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.action-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  font-size: 0.9em;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-button.detail {
+  background-color: #4CAF50 ; 
+}
+
+.action-button.detail:hover {
+  background-color: #0056b3;
+}
+
+.action-button.update {
+  background-color: #4CAF50; 
+}
+
+.action-button.update:hover {
+  background-color: #e0a800;
+}
+
+.action-button.delete {
+  background-color: #DC3545; 
+}
+
+.action-button.delete:hover {
+  background-color: #b02a37;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-update-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-detail-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+}
+
+.user-detail-container p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.user-detail-container strong {
+  color: #4CAF50;
+}
